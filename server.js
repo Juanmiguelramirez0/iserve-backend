@@ -14,7 +14,7 @@ const app = express();
 
 // 2. Middleware
 app.use(express.json());
-app.use(cors()); // This allows your React frontend to talk to this backend
+app.use(cors({ origin: '*' })) // This allows your React frontend to talk to this backend
 
 // 3. Database Connection
 mongoose.connect(process.env.MONGO_URI)
